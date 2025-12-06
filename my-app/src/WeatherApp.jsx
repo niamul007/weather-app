@@ -1,3 +1,15 @@
+import { Search, MapPin, Sunset, Sunrise, Droplet, Wind, Loader, Zap } from 'lucide-react';
+import React, { useState, useEffect, useCallback } from 'react';
+import SearchBar from './SearchBar';
+import CurrentWeatherCard from './CurrentWeatherCard';
+import ForecastList from './ForecastList';
+import { exponentialBackoffFetch } from './App.jsx';
+import { convertTemperature, filterForecastData } from './App.jsx';
+// API Keys and Endpoints
+const API_KEY = '653f8950547083fe96d14f04426fe038';
+const GEMINI_API_KEY = 'AIzaSyCf1mrlQCmCDOq9PD10HEcJlc9ybhUn9kY';
+const LLM_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${GEMINI_API_KEY}`;
+
 export default function WeatherApp() {
     // State hooks
     const [weatherData, setWeatherData] = useState(null);
@@ -22,7 +34,6 @@ export default function WeatherApp() {
 
         try {
             let currentUrl, cityLat, cityLon;
-
             // 1. Determine the initial API call URL
             if (lat && lon) {
                 // Fetch current weather using coordinates (used by Geolocation)
