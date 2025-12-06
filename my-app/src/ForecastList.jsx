@@ -1,3 +1,5 @@
+import React from 'react';
+import ForecastItem from './ForecastItem.jsx';
 const ForecastList = ({ forecast, unit }) => {
     if (!forecast || forecast.length === 0) {
         return null;
