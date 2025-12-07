@@ -6,8 +6,8 @@ import ForecastList from './ForecastList';
 import { exponentialBackoffFetch } from './App.jsx';
 import { convertTemperature, filterForecastData } from './App.jsx';
 // API Keys and Endpoints
-const API_KEY = '653f8950547083fe96d14f04426fe038';
-const GEMINI_API_KEY = 'AIzaSyCIfr5FssNQMUDIdty0sYJzeznMmOusvMA';
+const API_KEY = ''
+const GEMINI_API_KEY = ''
 const LLM_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${GEMINI_API_KEY}`;
 
 export default function WeatherApp() {
