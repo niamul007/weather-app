@@ -3,9 +3,9 @@ import { Search, MapPin, Sunset, Sunrise, Droplet, Wind, Loader, Zap } from 'luc
 
 // --- GLOBAL CONSTANTS ---
 // NOTE: OpenWeatherMap API Key is hardcoded here for simplicity in this sandbox.
-const API_KEY = '653f8950547083fe96d14f04426fe038'
+const API_KEY = ''
 // GEMINI_API_KEY is expected to be provided by the runtime environment.
-const GEMINI_API_KEY = 'AIzaSyCf1mrlQCmCDOq9PD10HEcJlc9ybhUn9kY'
+const GEMINI_API_KEY = ''
 const LLM_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${GEMINI_API_KEY}`;
 
 
@@ -50,7 +50,7 @@ export const convertTemperature = (kelvin, targetUnit) => {
     } else {
         return kelvin; 
     }
-    return parseFloat(result.toFixed(1)); // Return one decimal place
+    return parseFloat(result.toFixed(1)); // Return one decimal place and perse float make it a number 
 };
 
 // Aggregates the 3-hour forecast list into 5-day daily high/low data.
