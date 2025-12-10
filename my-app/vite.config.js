@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 // CRITICAL: Replace 'YOUR-REPO-NAME-HERE' with the exact name of your GitHub repository.
 // The base path must start and end with a slash '/'.
-const repoName = '/YOUR-REPO-NAME-HERE/'; 
+const repoName = '/weather-app/'; 
 
 // https://vitejs.dev/config/
 export default defineConfig({
